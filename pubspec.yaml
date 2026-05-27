@@ -1,7 +1,8 @@
 name: tiny_flutter
 description: "TinyMCE rich text editor for Flutter web (HtmlElementView + package assets)."
 version: 0.0.1
-homepage:
+homepage: https://github.com/pyaehtookyaw/tiny_flutter
+repository: https://github.com/pyaehtookyaw/tiny_flutter.git
 
 # This package is intended for Flutter web only (see `platforms`).
 # Non-web targets get a stub implementation so apps can still resolve the dependency.
