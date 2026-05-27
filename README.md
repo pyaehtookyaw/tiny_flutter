@@ -26,7 +26,7 @@ import 'package:tiny_flutter/tiny_flutter.dart';
 
 ## Demo
 
-![Tiny Flutter — Flutter web example](screenshots/tiny_flutter_demo.png)
+![Tiny Flutter — Flutter web example](screenshots/tiny_flutter_demo.gif)
 
 ## Screenshots (Web)
 
