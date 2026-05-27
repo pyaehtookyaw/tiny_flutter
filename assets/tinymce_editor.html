@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#my-editor',
+            height: '100%',
+            // Hide TinyMCE "Upgrade" promo (shown by default on CDN builds; JS app uses self-hosted bundle).
+            promotion: false,
+            plugins: 'table lists advlist link image code wordcount charmap preview visualblocks',
+            menubar: 'document edit view insert format tools table help',
+            menu: {
+                document: { title: 'Document', items: 'newdocument preview print' },
+                table: { title: 'Sheet', items: 'inserttable | cell row column | tableprops deletetable' }
+            },
+            toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+            setup: function (editor) {
+                // Listen for messages from Flutter (parent frame)
+                window.addEventListener('message', function (event) {
+                    if (event.data === 'getContent') {
+                        // Reply with the HTML content
+                        var content = editor.getContent();
+                        event.source.postMessage({ type: 'editorContent', content: content }, '*');
+                    } else if (event.data && event.data.type === 'setContent') {
+                        editor.setContent(event.data.content || '');
+                    }
+                });
+            }
+        });
+    </script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .tox-tinymce {
+            border: none !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="my-editor"></textarea>
+</body>
+
+</html>
