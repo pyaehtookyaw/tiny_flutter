@@ -3,12 +3,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:tiny_flutter/tiny_flutter.dart';
 
 void main() {
-  testWidgets('TinyMceEditorWidget builds (stub off-web)', (tester) async {
+  testWidgets('TinyMceEditor builds (stub off-web)', (tester) async {
     await tester.pumpWidget(
       const MaterialApp(
-        home: Scaffold(body: TinyMceEditorWidget(heightFactor: 0.2)),
+        home: Scaffold(body: TinyMceEditor(heightFactor: 0.2)),
       ),
     );
-    expect(find.textContaining('web only'), findsOneWidget);
+    expect(find.textContaining('Flutter web only'), findsOneWidget);
   });
 }

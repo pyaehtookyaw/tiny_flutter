@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 /// TinyMCE editor surface. On non-web platforms this is a placeholder; use
 /// Flutter web for the real editor.
-class TinyMceEditorWidget extends StatelessWidget {
+class TinyMceEditor extends StatelessWidget {
   final double heightFactor;
 
-  const TinyMceEditorWidget({super.key, this.heightFactor = 0.6});
+  const TinyMceEditor({super.key, this.heightFactor = 0.6});
 
   static Future<String?> getEditorContent({
     Duration timeout = const Duration(seconds: 5),
@@ -19,7 +19,7 @@ class TinyMceEditorWidget extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.sizeOf(context).height * heightFactor,
       child: const Center(
-        child: Text('TinyMceEditorWidget runs on Flutter web only.'),
+        child: Text('TinyMceEditor runs on Flutter web only.'),
       ),
     );
   }

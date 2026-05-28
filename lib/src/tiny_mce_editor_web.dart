@@ -6,10 +6,10 @@ import 'dart:ui_web' as ui;
 
 import 'package:flutter/material.dart';
 
-class TinyMceEditorWidget extends StatelessWidget {
+class TinyMceEditor extends StatelessWidget {
   final double heightFactor;
 
-  const TinyMceEditorWidget({super.key, this.heightFactor = 0.6});
+  const TinyMceEditor({super.key, this.heightFactor = 0.6});
 
   static const String _viewType = 'tinymce-editor-view';
   static bool _viewFactoryRegistered = false;

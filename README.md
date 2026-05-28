@@ -1,11 +1,13 @@
 # tiny_flutter
 
-A Flutter package that embeds **TinyMCE** in your app on **Flutter web** using `HtmlElementView`. The package ships the editor shell as an asset; your app composes labels, dialogs, and layout around [`TinyMceEditorWidget`](lib/src/tiny_mce_editor_widget_web.dart).
+A Flutter package that embeds [**TinyMCE**](https://www.tiny.cloud/) — a browser-based **HTML rich text editor** — in your app on **Flutter web** using `HtmlElementView`. The package ships the editor shell as an asset; your app composes labels, dialogs, and layout around [`TinyMceEditor`](lib/src/tiny_mce_editor_web.dart).
+
+> **Disclaimer:** `tiny_flutter` is an independent community package and is **not** affiliated with, endorsed by, or maintained by [Tiny Technologies](https://www.tiny.cloud/) (TinyMCE).
 
 ## Features
 
 ✅ **Web** — Rich text editing via TinyMCE inside Flutter web.  
-✅ **Lightweight API** — One widget plus `getEditorContent` / `setEditorContent`.  
+✅ **Lightweight API** — One editor widget plus `getEditorContent` / `setEditorContent`.  
 ✅ **No extra runtime deps** — Only `flutter` SDK; TinyMCE loads from CDN in the bundled HTML.
 
 ## Getting started
@@ -15,7 +17,8 @@ Add `tiny_flutter` to your `pubspec.yaml`:
 ```yaml
 dependencies:
   tiny_flutter:
-    path: ../tiny_flutter # or pub.dev / git
+    git:
+      url: https://github.com/pyaehtookyaw/tiny_flutter.git
 ```
 
 Import the library:
@@ -26,7 +29,7 @@ import 'package:tiny_flutter/tiny_flutter.dart';
 
 ## Demo
 
-![Tiny Flutter — Flutter web example](screenshots/tiny_flutter_demo.gif)
+![Tiny Flutter — Flutter web example](screenshots/tiny_flutter_demo.png)
 
 ## Screenshots (Web)
 
@@ -36,7 +39,7 @@ import 'package:tiny_flutter/tiny_flutter.dart';
 
 ## Example usage
 
-Place [`TinyMceEditorWidget`](lib/src/tiny_mce_editor_widget_web.dart) where you need the editor (often inside a dialog or a `Row` with your own “Article content” label):
+Place [`TinyMceEditor`](lib/src/tiny_mce_editor_web.dart) where you need the editor (often inside a dialog or a `Row` with your own “Article content” label):
 
 ```dart
 import 'package:flutter/material.dart';
@@ -68,7 +71,7 @@ class ArticleBody extends StatelessWidget {
         const SizedBox(width: 8),
         const Flexible(
           flex: 5,
-          child: TinyMceEditorWidget(heightFactor: 0.35),
+          child: TinyMceEditor(heightFactor: 0.35),
         ),
       ],
     );
@@ -76,8 +79,8 @@ class ArticleBody extends StatelessWidget {
 }
 
 Future<void> readAndSave() async {
-  final html = await TinyMceEditorWidget.getEditorContent();
-  TinyMceEditorWidget.setEditorContent('<p>Hello</p>');
+  final html = await TinyMceEditor.getEditorContent();
+  TinyMceEditor.setEditorContent('<p>Hello</p>');
   // use html (e.g. send to API)
 }
 ```

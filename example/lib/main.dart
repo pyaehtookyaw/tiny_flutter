@@ -139,7 +139,7 @@ class _ArticleEditorDialogState extends State<_ArticleEditorDialog> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      TinyMceEditorWidget.setEditorContent(widget.initialHtml);
+      TinyMceEditor.setEditorContent(widget.initialHtml);
     });
   }
 
@@ -205,11 +205,9 @@ class _ArticleEditorDialogState extends State<_ArticleEditorDialog> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    Flexible(
+                    const Flexible(
                       flex: 5,
-                      child: TinyMceEditorWidget(
-                        heightFactor: size.height * 0.50,
-                      ),
+                      child: TinyMceEditor(heightFactor: 0.38),
                     ),
                   ],
                 ),
@@ -225,7 +223,7 @@ class _ArticleEditorDialogState extends State<_ArticleEditorDialog> {
                   const SizedBox(width: 8),
                   FilledButton(
                     onPressed: () async {
-                      final html = await TinyMceEditorWidget.getEditorContent();
+                      final html = await TinyMceEditor.getEditorContent();
                       widget.onSave(html);
                     },
                     child: const Text('Save'),

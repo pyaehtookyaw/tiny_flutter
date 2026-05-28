@@ -1,3 +1,4 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release: `TinyMceEditor` for Flutter web (TinyMCE via `HtmlElementView`).
+* Static helpers: `getEditorContent`, `setEditorContent`.
