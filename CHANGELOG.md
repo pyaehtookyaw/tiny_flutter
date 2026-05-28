@@ -1,5 +1,9 @@
 ## 0.0.3
 
+* Fix image example file in `READMEMD`.
+
+## 0.0.3
+
 * Rename public API from `TinyMceEditorWidget` to `TinyMceEditor`.
 * README: TinyMCE disclaimer (not affiliated with Tiny Technologies).
 * Fix `LICENSE`, `CHANGELOG`, and formatting for pub.dev scoring.
