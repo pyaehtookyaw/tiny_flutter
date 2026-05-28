@@ -30,8 +30,7 @@ class MyApp extends StatelessWidget {
 class ExamplePage extends StatelessWidget {
   const ExamplePage({super.key});
 
-  static String _demoArticleHtml() =>
-      '''
+  static String _demoArticleHtml() => '''
 <table style="border-collapse: collapse; width: 100%;" border="1">
 <tbody>
 <tr>

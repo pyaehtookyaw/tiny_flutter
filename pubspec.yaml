@@ -3,6 +3,8 @@ description: "TinyMCE rich text editor for Flutter web (HtmlElementView + packag
 version: 0.0.3
 homepage: https://github.com/pyaehtookyaw/tiny_flutter
 repository: https://github.com/pyaehtookyaw/tiny_flutter.git
+issue_tracker: https://github.com/pyaehtookyaw/tiny_flutter/issues
+license: MIT
 
 # This package is intended for Flutter web only (see `platforms`).
 # Non-web targets get a stub implementation so apps can still resolve the dependency.
