@@ -36,9 +36,7 @@ class TinyMceEditorWidget extends StatelessWidget {
     };
     html.window.addEventListener('message', _messageListener!);
 
-    final iframeSrc = Uri.base
-        .resolve('assets/packages/tiny_flutter/assets/tinymce_editor.html')
-        .toString();
+    const iframeSrc = '/assets/packages/tiny_flutter/assets/tinymce_editor.html';
 
     ui.platformViewRegistry.registerViewFactory(_viewType, (int _) {
       final iframe = html.IFrameElement()
