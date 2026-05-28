@@ -206,7 +206,7 @@ class _ArticleEditorDialogState extends State<_ArticleEditorDialog> {
                     const SizedBox(width: 8),
                     const Flexible(
                       flex: 5,
-                      child: TinyMceEditor(heightFactor: 0.38),
+                      child: TinyMceEditor(heightFactor: 0.9),
                     ),
                   ],
                 ),
