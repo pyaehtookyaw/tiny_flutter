@@ -4,7 +4,7 @@
   and `dart.library.js_interop`, so `flutter build web --wasm` loads the real
   editor instead of the stub placeholder.
 
-## 0.0.4
+## 0.0.4 
 
 * Fix UI
 
